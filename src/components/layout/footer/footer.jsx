@@ -33,7 +33,7 @@ const Footer = ({ pages }) => {
             <br />
             <br />
             <p>
-              Jute King is one of the fast growing manufacturers in jute and non
+              Jute Journey is one of the fast growing manufacturers in jute and non
               woven industry. We engaged in manufacturing all kinds of Jute
               Bags, Non Woven Bags, Wedding Bags, Canvas Bags, Shopping Bags,
               Joco Bags, and Cotton Bags etc.
