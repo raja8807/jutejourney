@@ -1,0 +1,21 @@
+.custom_button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  border: 2px solid transparent;
+
+  &:disabled {
+    opacity: 0.7;
+  }
+
+  &.btnType_1{
+    background-color: $color_primary;
+    color: white;
+
+    &:hover{
+      background-color: white;
+      color: $color_primary;
+      border-color: $color_primary;
+    }
+  }
+}

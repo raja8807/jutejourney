@@ -1,0 +1,27 @@
+.drawBody {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    a {
+      padding: 10px 0;
+      border-bottom: 2px solid $color_primary;
+      &:hover {
+        color: $color_primary;
+        background-color: $color_primary;
+        color: white;
+      }
+      &.active {
+        background-color: $color_primary;
+        color: white;
+      }
+    }
+  }
+
+  .btn {
+    @include flexCenter;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
