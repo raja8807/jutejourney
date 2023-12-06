@@ -85,10 +85,11 @@ const Footer = ({ pages }) => {
             <h4>CONTACT INFORMATION</h4>
             <div className={styles.contactRow}>
               <GeoAltFill className={styles.icon} />
-              <p>
-                #7A, Nathan Building, 1st Floor, North Usman Road, T. Nagar,
-                Chennai - 600017.
-              </p>
+              <div>
+                <p>#7A, Nathan Building, 1st Floor,</p>
+                <p>North Usman Road, T. Nagar,</p>
+                <p>Chennai - 600017.</p>
+              </div>
             </div>
             <div className={styles.contactRow}>
               <EnvelopeAtFill className={styles.icon} />
@@ -107,6 +108,11 @@ const Footer = ({ pages }) => {
           </Section>
         </Row>
       </CustomContainer>
+      {/* <div className={styles.bottom}>
+        <p>
+          Copyright 2018 
+        </p>
+      </div> */}
     </footer>
   );
 };

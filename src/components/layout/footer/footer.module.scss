@@ -1,7 +1,7 @@
 .footer {
   background-color: $color_black;
   color: $color_grey;
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   @include respond-below(md) {
     padding: 0;
   }
@@ -35,19 +35,40 @@
 
   .contactRow {
     display: flex;
-    gap: 6px;
+    gap: 12px;
     margin: 24px 0;
+
+    p{
+        font-size: 16px;
+    }
 
     .icon {
       font-size: 20px !important;
       color: $color_primary;
+      margin-top: 5px;
     }
   }
+.bottom{
+   width: 90%;
+   background-color: $color_black;
+   margin: auto;
+   padding: 20px;
+
+   p{
+    background-color: rgba(0, 0, 0, 0.615);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+   }
+
+   
+}
+  
 }
 
 .section {
   margin: 0;
   @include respond-below(md) {
-    margin: 30px 0;
+    margin-top: 50px;
   }
 }

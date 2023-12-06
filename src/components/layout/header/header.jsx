@@ -28,7 +28,7 @@ const Header = ({ pages }) => {
       <HeaderDrawer show={showDrawer} setShow={setShowDrawer} pages={pages} />
       <CustomContainer>
         <div className={styles.hWrap}>
-          <Image fluid src="/images/logo/logo.png" alt="logo" width={50} />
+          <Image fluid src="/images/logo/logo-full.png" alt="logo" width={50} />
           <nav>
             {pages.map((page) => (
               <Link key={page.name} href={page.href}>
