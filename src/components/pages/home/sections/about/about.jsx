@@ -6,11 +6,12 @@ const { Row, Col, Image } = require("react-bootstrap");
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import styles from "./about.module.scss";
 import { CaretRightFill } from "react-bootstrap-icons";
+import SectionHeading from "@/components/ui/section-heading/section-heading";
 
 const AboutSection = () => {
   return (
     <CustomContainer className={styles.aboutSec}>
-      <div className={styles.head}>About Us</div>
+      <SectionHeading>About Us</SectionHeading>
       <Row>
         <Col sm={12} md={6} lg={8} className={styles.content}>
           <p>
