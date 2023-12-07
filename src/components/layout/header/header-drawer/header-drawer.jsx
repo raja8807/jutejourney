@@ -32,7 +32,7 @@ const HeaderDrawer = ({ show, setShow, pages }) => {
         <br />
         <br />
         <div className={styles.btn}>
-          <CustomButton>FREE QUOTE</CustomButton>
+          <CustomButton type={2}>FREE QUOTE</CustomButton>
           <SocialLinks header/>
         </div>
       </Offcanvas.Body>

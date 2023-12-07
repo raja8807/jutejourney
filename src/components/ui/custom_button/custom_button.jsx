@@ -1,13 +1,13 @@
 import styles from "./custom_button.module.scss";
 
-const CustomButton = (props) => {
-  const {
-    children,
-    type = 1,
-    clickHandler = () => {},
-    disabled,
-    btnType = "button",
-  } = props;
+const CustomButton = ({
+  children,
+  type = 1,
+  clickHandler = () => {},
+  disabled,
+  btnType = "button",
+}) => {
+  // const = props;
 
   return (
     <button

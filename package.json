@@ -24,6 +24,7 @@
     "react-dom": "18.2.0",
     "react-loading-skeleton": "^3.3.1",
     "react-share": "^4.4.1",
+    "react-slideshow-image": "^4.3.0",
     "react-social-media-embed": "^2.3.5"
   }
 }

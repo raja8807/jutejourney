@@ -38,32 +38,29 @@
     gap: 12px;
     margin: 24px 0;
 
-    p{
-        font-size: 16px;
+    p {
+      font-size: 16px;
     }
 
     .icon {
       font-size: 20px !important;
       color: $color_primary;
-      margin-top: 5px;
+      margin-top: 3px;
     }
   }
-.bottom{
-   width: 90%;
-   background-color: $color_black;
-   margin: auto;
-   padding: 20px;
+  .bottom {
+    width: 90%;
+    background-color: $color_black;
+    margin: auto;
+    padding: 20px;
 
-   p{
-    background-color: rgba(0, 0, 0, 0.615);
-    text-align: center;
-    padding: 20px 0;
-    color: white;
-   }
-
-   
-}
-  
+    p {
+      background-color: rgba(0, 0, 0, 0.615);
+      text-align: center;
+      padding: 20px 0;
+      color: white;
+    }
+  }
 }
 
 .section {

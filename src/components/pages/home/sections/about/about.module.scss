@@ -1,0 +1,57 @@
+.aboutSec {
+  .head {
+    background-color: $color_medium_grey;
+    color: $color_dark_grey;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .content {
+    padding: 20px;
+    @include respond-above(md) {
+      padding: 40px 20px;
+    }
+
+    .imgHolder {
+      @include flexCenter;
+    }
+
+    h5 {
+      color: $color_dark_grey;
+      border-left: 2px solid $color_dark_grey;
+      padding: 0 10px;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      font-size: 13px;
+
+      svg{
+        background-color: $color_primary;
+        color: white;
+        height: 18px;
+        width: 18px;
+        padding: 4px;
+        border-radius: 50%;
+      }
+      
+      p {
+          font-size: 13px;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+  }
+
+  p {
+    font-size: 14px;
+    color: $color_black;
+    margin-bottom: 10px;
+  }
+}

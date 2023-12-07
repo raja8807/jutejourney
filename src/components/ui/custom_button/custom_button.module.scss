@@ -1,21 +1,76 @@
+$diagWidth : 148px;
 .custom_button {
   padding: 10px 20px;
   border: none;
   border-radius: 50px;
+ 
   border: 2px solid transparent;
+
 
   &:disabled {
     opacity: 0.7;
   }
 
-  &.btnType_1{
+  &.btnType_1 {
     background-color: $color_primary;
     color: white;
 
-    &:hover{
+    &:hover {
       background-color: white;
       color: $color_primary;
       border-color: $color_primary;
+    }
+  }
+
+  &.btnType_2 {
+    height: 45px;
+    width: 140px;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.5s all ease;
+    border-color: $color_primary;
+    background-color: $color_primary;
+    color: white;
+    &:active{
+      transform: scale(0.9);
+    }
+    &::before {
+      position: absolute;
+      background-color: white;
+      transform-origin: bottom left;
+      z-index: -1;
+      content: "";
+      width: $diagWidth;
+      height: 0;
+      bottom: -1px;
+      left: 0;
+      transform: rotate(-18deg);
+      transition: 0.5s all ease;
+    }
+    &::after {
+      position: absolute;
+      background-color: white;
+      transform-origin: top right;
+      z-index: -1;
+      content: "";
+      width: $diagWidth;
+      height: 0%;
+      top: -2px;
+      right: 0;
+      transform: rotate(-18deg);
+      transition: 0.5s all ease;
+    }
+
+    &:hover {
+      color: $color_primary;
+      &::before {
+        height: 100%;
+      }
+      &::after {
+        height: 101%;
+      }
     }
   }
 }

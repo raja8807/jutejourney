@@ -1,0 +1,17 @@
+.eachSlideEffect {
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: calc(100vh - 200px);
+  }
+
+  span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+  }
+}
+

@@ -8,33 +8,7 @@ const Layout = (props) => {
   return (
     <>
       <Header pages={pages} />
-      {/* {children} */}
-      <div>
-        
-     
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      </div>
-
+      {children}
       <Footer pages={pages} />
     </>
   );

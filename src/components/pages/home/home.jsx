@@ -1,5 +1,13 @@
-const HomePage = ()=>{
-    return <p>Home</p>
-}
+import AboutSection from "./sections/about/about";
+import Banner from "./sections/banner/banner";
 
-export default HomePage
+const HomePage = () => {
+  return (
+    <>
+      <Banner />
+      <AboutSection/>
+    </>
+  );
+};
+
+export default HomePage;
