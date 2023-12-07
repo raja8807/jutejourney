@@ -10,8 +10,9 @@ import SectionHeading from "@/components/ui/section-heading/section-heading";
 
 const AboutSection = () => {
   return (
+     <>
+      <SectionHeading center>About Us</SectionHeading>
     <CustomContainer className={styles.aboutSec}>
-      <SectionHeading>About Us</SectionHeading>
       <Row>
         <Col sm={12} md={6} lg={8} className={styles.content}>
           <p>
@@ -87,6 +88,7 @@ const AboutSection = () => {
       </Row>
       <br/>
     </CustomContainer>
+     </>
   );
 };
 

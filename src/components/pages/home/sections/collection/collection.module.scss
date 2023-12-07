@@ -46,6 +46,14 @@
   }
 }
 
+.txt {
+    // text-align: center;
+  span {
+    color: $color_primary;
+    font-weight: 500;
+  }
+}
+
 .imgHolderMd {
   @include respond-below(md) {
     display: none;

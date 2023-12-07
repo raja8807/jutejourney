@@ -42,30 +42,32 @@ const ReviewsSection = () => {
   ];
 
   return (
-    <CustomContainer className={styles.reviews}>
+    <>
       <SectionHeading
         center
-        caption="Look what our precious customer says about us."
+        caption="Look what our precious customers say about us."
       >
         Customer Reviews
       </SectionHeading>
-      <br />
-      <Carousel
-        controls
-        nextIcon={<ArrowRight className={styles.arrow} />}
-        prevIcon={<ArrowLeft className={styles.arrow} />}
-      >
-        {reviews.map((r) => (
-          <Carousel.Item key={r.id}>
-            <Testimonial data={r} />
-          </Carousel.Item>
-        ))}
-      </Carousel>
-      <div className={styles.btn}>
-        <CustomButton>View More</CustomButton>
-      </div>
-      <br />
-    </CustomContainer>
+      <CustomContainer className={styles.reviews}>
+        <br />
+        <Carousel
+          controls
+          nextIcon={<ArrowRight className={styles.arrow} />}
+          prevIcon={<ArrowLeft className={styles.arrow} />}
+        >
+          {reviews.map((r) => (
+            <Carousel.Item key={r.id}>
+              <Testimonial data={r} />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+        <div className={styles.btn}>
+          <CustomButton>View More</CustomButton>
+        </div>
+        <br />
+      </CustomContainer>
+    </>
   );
 };
 

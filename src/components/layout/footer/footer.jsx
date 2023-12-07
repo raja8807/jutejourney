@@ -5,15 +5,15 @@ import SocialLinks from "@/components/ui/social_links/social_links";
 import Link from "next/link";
 import {
   ChevronRight,
-  EnvelopeAt,
   EnvelopeAtFill,
   GeoAltFill,
   TelephoneFill,
   Whatsapp,
 } from "react-bootstrap-icons";
+import contactDetails from "@/constants/contactDetails";
 
-const Section = ({ children }) => (
-  <Col sm={12} md={6} lg={3} className={styles.section}>
+const Section = ({ children,lg=3 }) => (
+  <Col sm={12} md={6} lg={lg} className={styles.section}>
     {children}
   </Col>
 );
@@ -33,8 +33,8 @@ const Footer = ({ pages }) => {
             <br />
             <br />
             <p>
-              Jute Journey is one of the fast growing manufacturers in jute and non
-              woven industry. We engaged in manufacturing all kinds of Jute
+              Jute Journey is one of the fast growing manufacturers in jute and
+              non woven industry. We engaged in manufacturing all kinds of Jute
               Bags, Non Woven Bags, Wedding Bags, Canvas Bags, Shopping Bags,
               Joco Bags, and Cotton Bags etc.
             </p>
@@ -42,7 +42,8 @@ const Footer = ({ pages }) => {
             <br />
             <SocialLinks />
           </Section>
-          <Section>
+
+          <Section lg={2}>
             <h4>USEFULL LINKS</h4>
             {pages.map((page) => (
               <div key={page.name} className={styles.row}>
@@ -51,6 +52,7 @@ const Footer = ({ pages }) => {
               </div>
             ))}
           </Section>
+
           <Section>
             <h4>LOCATE US</h4>
             <div
@@ -81,29 +83,35 @@ const Footer = ({ pages }) => {
               <style>{`#display-google-map img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}`}</style>
             </div>
           </Section>
-          <Section>
+
+          <Section lg={4}>
             <h4>CONTACT INFORMATION</h4>
             <div className={styles.contactRow}>
               <GeoAltFill className={styles.icon} />
-              <div>
-                <p>#7A, Nathan Building, 1st Floor,</p>
-                <p>North Usman Road, T. Nagar,</p>
-                <p>Chennai - 600017.</p>
+              <div className={styles.loc}>
+                {contactDetails.addresses.map((address) => (
+                  <div key={address.location}>
+                    <p>
+                      <b>{address.location}</b> : {address.lines[0]},
+                    </p>
+                    <p>{address.lines[1]}.</p>
+                  </div>
+                ))}
               </div>
             </div>
             <div className={styles.contactRow}>
               <EnvelopeAtFill className={styles.icon} />
               <div>
-                <p>admin@jutejourney.com</p>
+                <p>{contactDetails.email}</p>
               </div>
             </div>
             <div className={styles.contactRow}>
               <TelephoneFill className={styles.icon} />
-              <p>+91 9876598745</p>
+              <p>+91 {contactDetails.mobile}</p>
             </div>
             <div className={styles.contactRow}>
               <Whatsapp className={styles.icon} />
-              <p>+91 9876598745</p>
+              <p>+91 98765 98745</p>
             </div>
           </Section>
         </Row>

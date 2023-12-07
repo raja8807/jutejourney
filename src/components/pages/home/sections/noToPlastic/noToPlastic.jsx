@@ -7,7 +7,7 @@ const NoToPlasticSection = () => {
     <div className={styles.noToPlastic}>
       <CustomContainer className={styles.wrap}>
         <div>
-          <p className={styles.txtTop}>Say &apos;NO&apos; To Plastic YES To Jute</p>
+          <p className={styles.txtTop}>Say &apos;NO&apos; To Plastic <b>YES</b> To Jute</p>
           <p className={styles.txtBtm}>Promote your business or Event with Jute bag</p>
         </div>
         <div>

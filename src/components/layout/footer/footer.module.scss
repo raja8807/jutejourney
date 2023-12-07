@@ -61,6 +61,17 @@
       color: white;
     }
   }
+
+  .loc {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    b {
+      color: $color_primary;
+      font-weight: 500;
+    }
+  }
 }
 
 .section {
