@@ -1,0 +1,26 @@
+.noToPlastic {
+  background-color: $color_primary;
+  color: white;
+  padding: 50px 0;
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include respond-below(sm) {
+      flex-direction: column;
+      align-items: start;
+      gap: 16px;
+    }
+
+    .txtTop{
+        font-size: 24px;
+    }
+    
+    .txtBtm{
+        font-size: 18px;
+        font-weight: 100;
+        margin: 5px 0;
+    }
+  }
+}

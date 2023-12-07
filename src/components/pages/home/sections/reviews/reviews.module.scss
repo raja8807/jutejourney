@@ -1,0 +1,14 @@
+.reviews {
+  * {
+    opacity: 1 !important;
+  }
+  .arrow {
+    color: $color_primary;
+    font-size: 24px;
+  }
+
+  .btn{
+    width: fit-content;
+    margin: auto;
+  }
+}

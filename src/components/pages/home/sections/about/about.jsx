@@ -85,6 +85,7 @@ const AboutSection = () => {
           </Row>
         </Col>
       </Row>
+      <br/>
     </CustomContainer>
   );
 };

@@ -2,7 +2,7 @@ import CustomContainer from "@/components/ui/custom_container/custom_container";
 import styles from "./journey.module.scss";
 import SectionHeading from "@/components/ui/section-heading/section-heading";
 import { Col, Image, Row } from "react-bootstrap";
-import { AirplaneFill, Fire, StarFill } from "react-bootstrap-icons";
+import { AirplaneFill, DropletFill,  StarFill } from "react-bootstrap-icons";
 
 const JuteJourneySection = () => {
   return (
@@ -31,7 +31,7 @@ const JuteJourneySection = () => {
       <div className={styles.holder}>
         <div className={styles.box}>
           <div className={styles.top}>
-            <Fire />
+            <DropletFill />
             <span>Print Specialists</span>
           </div>
           <div className={styles.bottom}>Screen | Digital | Transfer</div>
