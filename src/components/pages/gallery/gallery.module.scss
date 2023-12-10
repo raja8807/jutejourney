@@ -15,6 +15,42 @@
     }
   }
 
+  .img {
+    margin: 10px 0;
+    position: relative;
+    cursor: pointer;
+    .overlay {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+      @include flexCenter;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      .eye {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 40px;
+        width: 40px;
+        padding: 10px;
+        border-radius: 50%;
+        border: 1px solid white;
+      }
+    }
+
+    &:hover {
+      .overlay {
+        transform: scaleY(1);
+      }
+    }
+  }
+  .rowSm {
+    display: none;
+  }
+
   @include respond-below(sm) {
     .tabs {
       flex-direction: column;
@@ -27,6 +63,14 @@
         text-align: center;
         padding: 4px 0;
       }
+    }
+
+    .rowMd {
+      display: none;
+    }
+
+    .rowSm {
+      display: initial;
     }
   }
 }

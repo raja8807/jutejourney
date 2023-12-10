@@ -73,7 +73,7 @@ const ReviewForm = ({ setReviews }) => {
               <StarFill
                 className={`${styles.star} ${
                   hoveredRating >= idx && styles.hovered
-                } ${selectedRating >= idx && styles.hovered}`}
+                } ${selectedRating >= idx && styles.active}`}
                 key={idx}
                 onMouseEnter={() => {
                   setHoveredRating(idx);

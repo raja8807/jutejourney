@@ -27,7 +27,6 @@
     border: 1px solid $color_grey;
     outline: none;
     width: 100%;
-    
 
     &:hover,
     &:active {
@@ -40,6 +39,9 @@
     align-items: center;
     gap: 10px;
     width: fit-content;
+    * {
+      transition: 0s !important;
+    }
     p {
       margin-top: -3px;
     }
@@ -53,8 +55,10 @@
       .star {
         color: $color_grey;
 
-        &.hovered {
+        &.hovered,
+        &.active {
           color: rgb(219, 187, 5);
+          transform: scale(1.2);
         }
       }
     }

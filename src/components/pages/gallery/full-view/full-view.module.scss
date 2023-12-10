@@ -1,0 +1,63 @@
+.fullView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+
+  .top {
+    // color: $color_lig;
+    background-color: black;
+    // padding: 20px;
+
+    .wrap {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 10px;
+      gap: 20px;
+      font-size: 24px;
+
+      svg {
+        color: $color_medium_grey;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.2);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .imgr {
+    padding: 20px;
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    height: 90%;
+    @include flexCenter;
+
+    .arrowLeft,
+    .arrowRight {
+      color: white;
+      font-size: 60px;
+      position: absolute;
+      top: 50%;
+      transform: translate(0px, -50%);
+      cursor: pointer;
+      &:hover {
+        color: $color_primary;
+        font-size: 65px;
+      }
+    }
+
+    .arrowLeft {
+      left: 10px;
+    }
+
+    .arrowRight {
+      right: 10px;
+    }
+  }
+}
