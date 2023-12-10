@@ -23,6 +23,7 @@ const HeaderDrawer = ({ show, setShow, pages }) => {
                 className={
                   router.pathname === page.href ? styles.active : "inactive"
                 }
+                onClick={()=> setShow(false)}
               >
                 <span>{page.name.toUpperCase()}</span>
               </Link>

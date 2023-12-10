@@ -1,0 +1,32 @@
+.gallery {
+  .tabs {
+    display: flex;
+    gap: 16px;
+    .tab {
+      padding: 8px 20px;
+      border-radius: 50px;
+      cursor: pointer;
+
+      &.active,
+      &:hover {
+        background-color: $color_primary;
+        color: white;
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    .tabs {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+
+      .tab {
+        width: 100%;
+        text-align: center;
+        padding: 4px 0;
+      }
+    }
+  }
+}
