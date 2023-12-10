@@ -1,11 +1,11 @@
 const contactDetails = {
-  facebook: "#",
-  instagram: "#",
+  facebook: "https://www.facebook.com/profile.php?id=61554081703258",
+  instagram: "https://instagram.com/jutejourneyy",
   twitter: "#",
   linkedIn: "#",
   youtube: "#",
-  mobile: "74833 77777",
-  whatsapp: "#",
+  mobile: "7483377777",
+  whatsapp: "9042936647",
   email: "sales@jutejourney.com",
 
   addresses: [
@@ -26,8 +26,8 @@ const contactDetails = {
     {
       location: "Thoothukudi",
       lines: [
-        "Shop No: 204, Food Grain Market",
-        "west Millerpuram, Chennai, Thoothukudi - 628008",
+        "106H/5D/6, Palai Road west Millerpuram",
+        "Thoothukudi - 628008",
       ],
     },
   ],

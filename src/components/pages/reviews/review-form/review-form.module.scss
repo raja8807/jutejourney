@@ -1,0 +1,52 @@
+.reviewForm {
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+    gap: 10px;
+  }
+  gap: 20px;
+  //   width: 100%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  input,
+  textarea {
+    padding: 6px 10px;
+    border-radius: 5px;
+    border: 1px solid $color_grey;
+    outline: none;
+    width: 100%;
+
+    &:hover,
+    &:active {
+      border-color: $color_primary;
+    }
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    p {
+      margin-top: -3px;
+    }
+
+    .stars {
+      align-items: center;
+      display: flex;
+      gap: 4px;
+      cursor: pointer;
+
+      .star {
+        color: $color_grey;
+
+        &.hovered {
+          color: rgb(219, 187, 5);
+        }
+      }
+    }
+  }
+}

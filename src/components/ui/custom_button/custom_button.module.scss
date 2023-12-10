@@ -7,7 +7,7 @@ $diagWidth: 148px;
   border: 2px solid transparent;
 
   &:disabled {
-    opacity: 0.7;
+    opacity: 0.9;
   }
 
   &.btnType_1 {
@@ -115,8 +115,11 @@ $diagWidth: 148px;
       transition: 0.5s all ease;
     }
 
+   &:not(:disabled){
     &:hover {
       color: $color_primary;
+      border-color: $color_primary;
+
       &::before {
         height: 100%;
       }
@@ -124,5 +127,12 @@ $diagWidth: 148px;
         height: 101%;
       }
     }
+   }
+  }
+
+  .spinner {
+    height: 20px;
+    width: 20px;
+    border-width: 3px;
   }
 }

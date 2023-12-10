@@ -12,7 +12,7 @@ import {
 } from "react-bootstrap-icons";
 import contactDetails from "@/constants/contactDetails";
 
-const Section = ({ children,lg=3 }) => (
+const Section = ({ children, lg = 3 }) => (
   <Col sm={12} md={6} lg={lg} className={styles.section}>
     {children}
   </Col>
@@ -111,7 +111,7 @@ const Footer = ({ pages }) => {
             </div>
             <div className={styles.contactRow}>
               <Whatsapp className={styles.icon} />
-              <p>+91 98765 98745</p>
+              <p>+91 {contactDetails.whatsapp}</p>
             </div>
           </Section>
         </Row>

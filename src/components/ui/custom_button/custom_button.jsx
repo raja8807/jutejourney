@@ -1,3 +1,4 @@
+import { Spinner } from "react-bootstrap";
 import styles from "./custom_button.module.scss";
 
 const CustomButton = ({
@@ -6,9 +7,8 @@ const CustomButton = ({
   clickHandler = () => {},
   disabled,
   btnType = "button",
+  isLoading
 }) => {
-  // const = props;
-
   return (
     <button
       type={btnType}
@@ -17,9 +17,9 @@ const CustomButton = ({
         e.preventDefault();
         clickHandler(e);
       }}
-      disabled={disabled}
+      disabled={disabled || isLoading}
     >
-      {children}
+      {isLoading ? <Spinner className={styles.spinner} /> : children}
     </button>
   );
 };
