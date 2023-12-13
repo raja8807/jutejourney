@@ -12,6 +12,10 @@ const handler = async (req, res) => {
       await connectMongoDB();
       data = await GalleryImage.find();
     }
+    if (req.method === "DELETE") {
+      await connectMongoDB();
+      data = await GalleryImage.deleteOne({ url: req.query.url });
+    }
 
     return res.status(200).send(data);
   } catch (err) {

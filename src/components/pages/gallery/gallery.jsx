@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { Eye } from "react-bootstrap-icons";
 import FullView from "./full-view/full-view";
+import imageCategories from "@/constants/categories";
 
 const GalleryScreen = ({ allImages = [] }) => {
-  const categories = ["Category 1", "Category 2", "Category 3"];
+  const categories = imageCategories;
   const [currentCategory, setCurrentCategory] = useState("All");
   const [fullViewIndex, setFullViewIndex] = useState(null);
 

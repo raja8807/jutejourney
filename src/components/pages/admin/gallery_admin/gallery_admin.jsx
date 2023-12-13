@@ -5,7 +5,10 @@ import SectionHeading from "@/components/ui/section-heading/section-heading";
 import styles from "./gallery_admin.module.scss";
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import CustomButton from "@/components/ui/custom_button/custom_button";
-import { Image, Spinner } from "react-bootstrap";
+import { Col, Image, Row, Spinner } from "react-bootstrap";
+import CustomSelect from "@/components/ui/custom_select/custom_select";
+import imageCategories from "@/constants/categories";
+import { Trash } from "react-bootstrap-icons";
 
 const GalleryAdminScreen = ({ images }) => {
   const cloud = "dgohiob1t";
@@ -14,6 +17,9 @@ const GalleryAdminScreen = ({ images }) => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState("All");
+
+  const [imagesData, setImagesData] = useState(images);
 
   const uploadImage = async () => {
     setLoading(true);
@@ -31,14 +37,11 @@ const GalleryAdminScreen = ({ images }) => {
       if (uploadRes.data) {
         const { url } = uploadRes.data;
         const res = await axios.post("/api/gallery", {
-          category: "new",
+          category,
           url,
         });
-        // console.log(res);
-        // // console.log(url);
+        setImagesData((prev) => [res.data, ...prev]);
       }
-      const input = document?.getElementById("fileSelect");
-      input.value = "";
       setFile(null);
     } catch (err) {
       console.log(err);
@@ -47,53 +50,122 @@ const GalleryAdminScreen = ({ images }) => {
     setLoading(false);
   };
 
+  const deleteImage = async (img) => {
+    try {
+      const res = await axios.delete(`/api/gallery?url=${img.url}`);
+      if (res) {
+        setImagesData((prev) => prev.filter((i) => i.url !== img.url));
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <SectionHeading center>Update Gallery</SectionHeading>
       <br />
-      {error}
+      {/* {error} */}
+
       <CustomContainer>
         <div className={styles.gAdmin}>
-          <div className={styles.upload}>
-            <input
-              id="fileSelect"
-              type="file"
-              max={1}
-              onChange={(e) => {
-                setError(null);
+          {!file && (
+            <div className={styles.upload}>
+              <input
+                id="fileSelect"
+                type="file"
+                max={1}
+                onChange={(e) => {
+                  setError(null);
 
-                const newFile = e.target.files[0];
-                if (newFile) {
-                  if (newFile.size > 2048000) {
-                    setError("size");
+                  const newFile = e.target.files[0];
+                  if (newFile) {
+                    if (newFile.size > 2048000) {
+                      setError("Image size exceeds 2 MB");
+                      const input = document?.getElementById("fileSelect");
+                      input.value = "";
+                      return;
+                    }
+                    if (!newFile.type.includes("image")) {
+                      setError("invalid image format");
+                      const input = document?.getElementById("fileSelect");
+                      input.value = "";
+                      return;
+                    }
+                    setFile(newFile);
                     return;
                   }
-                  if (!newFile.type.includes("image")) {
-                    setError("invalid image");
-                    return;
-                  }
-                  setFile(newFile);
-                  return;
-                }
-                setError("something went wrong");
-              }}
-            />
-            <CustomButton
-              isLoading={loading}
-              type={3}
-              disabled={!file}
-              clickHandler={uploadImage}
-            >
-              Upload
-            </CustomButton>
-          </div>
-          {file && <Image src={URL.createObjectURL(file)} alt="xx" fluid />}
+                  setError("something went wrong");
+                  const input = document?.getElementById("fileSelect");
+                  input.value = "";
+                }}
+              />
+              <p className={styles.err}>{error}</p>
+            </div>
+          )}
+          {file && (
+            <div className={styles.imgPreview}>
+              <Image
+                src={URL.createObjectURL(file)}
+                alt="xx"
+                fluid
+                width={300}
+              />
+              <div>
+                <CustomSelect
+                  options={[
+                    { value: "All", text: "All" },
+                    ...imageCategories.map((c) => ({ value: c, text: c })),
+                  ]}
+                  value={category}
+                  onChange={(v) => {
+                    setCategory(v);
+                  }}
+                />
+
+                <CustomButton
+                  isLoading={loading}
+                  type={3}
+                  disabled={!file}
+                  clickHandler={uploadImage}
+                >
+                  Upload
+                </CustomButton>
+                <CustomButton
+                  isLoading={loading}
+                  type={3}
+                  disabled={!file}
+                  clickHandler={() => {
+                    setError(null);
+                    setFile(null);
+                  }}
+                >
+                  Cancel
+                </CustomButton>
+              </div>
+            </div>
+          )}
         </div>
-        <div>
-          {images.map((img) => (
-            <Image key={img._id} src={img.url} alt="xx" fluid />
-          ))}
-        </div>
+
+        <br />
+        <Row>
+          {imagesData.map((img) => {
+            return (
+              <Col key={img._id} xs={6} md={3}>
+                <div className={styles.imgWrap}>
+                  <Trash
+                    className={styles.trash}
+                    onClick={() => {
+                      deleteImage(img);
+                    }}
+                  />
+                  <Image src={img.url} alt="xx" fluid className={styles.img} />
+                  <p>{img.category}</p>
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
       </CustomContainer>
       <br />
     </>

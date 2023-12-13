@@ -1,0 +1,28 @@
+.gAdmin {
+  .err {
+    color: red;
+  }
+}
+
+.imgWrap {
+  padding: 10px 0;
+  position: relative;
+  .trash {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    color: white;
+    font-size: 24px;
+    background-color: rgba(255, 0, 0, 0.9);
+    padding: 4px;
+    cursor: pointer;
+  }
+}
+
+.imgPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}

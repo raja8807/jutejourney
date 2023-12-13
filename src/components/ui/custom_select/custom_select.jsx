@@ -1,7 +1,7 @@
 import styles from "./custom_select.module.scss";
 
-const CustomSelect = (props) => {
-  const { options = [], value, onChange = () => {} } = props;
+const CustomSelect = ({ options = [], value, onChange = () => {}}) => {
+  // const { } = props;
 
   return (
     <select
