@@ -47,9 +47,8 @@
       }
     }
   }
-  .rowSm {
-    display: none;
-  }
+
+  
 
   @include respond-below(sm) {
     .tabs {
@@ -63,14 +62,6 @@
         text-align: center;
         padding: 4px 0;
       }
-    }
-
-    .rowMd {
-      display: none;
-    }
-
-    .rowSm {
-      display: initial;
     }
   }
 }

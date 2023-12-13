@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Layout from "@/components/layout/layout";
+import { SessionProvider } from "next-auth/react";
 
 export default function App({ Component, pageProps }) {
   useEffect(() => {
@@ -13,9 +14,13 @@ export default function App({ Component, pageProps }) {
     });
   }, []);
 
+  // console.log(process.env.NEXT_PUBLIC_MONGO_URI);
+
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SessionProvider session={pageProps.session}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SessionProvider>
   );
 }

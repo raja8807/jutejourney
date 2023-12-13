@@ -1,0 +1,12 @@
+.customInput {
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid $color_grey;
+  outline: none;
+  width: 100%;
+
+  &:hover,
+  &:active {
+    border-color: $color_primary;
+  }
+}

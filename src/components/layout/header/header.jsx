@@ -53,6 +53,7 @@ const Header = ({ pages }) => {
         </div>
       </CustomContainer>
     </header>
+    
   );
 };
 

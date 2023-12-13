@@ -6,25 +6,10 @@ import { Col, Image, Row } from "react-bootstrap";
 import { Eye } from "react-bootstrap-icons";
 import FullView from "./full-view/full-view";
 
-const GalleryScreen = () => {
+const GalleryScreen = ({ allImages = [] }) => {
   const categories = ["Category 1", "Category 2", "Category 3"];
   const [currentCategory, setCurrentCategory] = useState("All");
   const [fullViewIndex, setFullViewIndex] = useState(null);
-
-  function randomIntFromInterval(min, max) {
-    // min and max included
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  const allImages = [];
-
-  for (let i = 1; i <= 10; i++) {
-    allImages.push({
-      _id: i,
-      url: `/images/collection/${randomIntFromInterval(1, 7)}.png`,
-      category: categories[randomIntFromInterval(0, 2)],
-    });
-  }
 
   const [images, setImages] = useState(allImages);
 
@@ -40,9 +25,20 @@ const GalleryScreen = () => {
     );
   }, [currentCategory]);
 
+  const [isSm, setIsSm] = useState(true);
+
+  useEffect(() => {
+    setIsSm(window.innerWidth < 769);
+    window.addEventListener("resize", () => {
+      setIsSm(window.innerWidth < 769);
+    });
+  }, []);
+
   let c1 = 1;
   let c2 = 2;
   let c3 = 3;
+
+  // console.log(images);
 
   return (
     <>
@@ -89,140 +85,148 @@ const GalleryScreen = () => {
           </div>
           <br />
 
-          <div className={styles.rowSm}>
-            <Row>
-              <Col xs={6}>
-                {images.map((image, i) => {
-                  if (
-                    i % 2 === 0 &&
-                    (currentCategory === "All" ||
-                      currentCategory === image.category)
-                  ) {
-                    return (
-                      <div key={image._id} className={styles.img}>
-                        <div className={styles.overlay}>
-                          <Eye
-                            className={styles.eye}
-                            onClick={() => {
-                              setFullViewIndex(i);
-                            }}
+          {isSm ? (
+            <div className={styles.rowSm}>
+              <Row>
+                <Col xs={6}>
+                  {images.map((image, i) => {
+                    const idx = i;
+                    if (
+                      idx % 2 === 0 &&
+                      (currentCategory === "All" ||
+                        currentCategory === image.category)
+                    ) {
+                      return (
+                        <div key={image._id} className={styles.img}>
+                          <div className={styles.overlay}>
+                            <Eye
+                              className={styles.eye}
+                              onClick={() => {
+                                setFullViewIndex(i);
+                              }}
+                            />
+                          </div>
+                          <Image src={image.url} alt={image.category} fluid />
+                        </div>
+                      );
+                    }
+                  })}
+                </Col>
+                <Col xs={6}>
+                  {images.map((image, i) => {
+                    const idx = i;
+                    if (
+                      idx % 2 !== 0 &&
+                      (currentCategory === "All" ||
+                        currentCategory === image.category)
+                    ) {
+                      return (
+                        <div key={image._id} className={styles.img}>
+                          <div className={styles.overlay}>
+                            <Eye
+                              className={styles.eye}
+                              onClick={() => {
+                                setFullViewIndex(i);
+                              }}
+                            />
+                          </div>
+                          <Image
+                            key={image._id}
+                            src={image.url}
+                            alt={image.category}
+                            fluid
+                            className={styles.img}
                           />
                         </div>
-                        <Image src={image.url} alt={image.category} fluid />
-                      </div>
-                    );
-                  }
-                })}
-              </Col>
-              <Col xs={6}>
-                {images.map((image, i) => {
-                  if (
-                    i % 2 !== 0 &&
-                    (currentCategory === "All" ||
-                      currentCategory === image.category)
-                  ) {
-                    return (
-                      <div key={image._id} className={styles.img}>
-                        <div className={styles.overlay}>
-                          <Eye
-                            className={styles.eye}
-                            onClick={() => {
-                              setFullViewIndex(i);
-                            }}
-                          />
+                      );
+                    }
+                  })}
+                </Col>
+              </Row>
+            </div>
+          ) : (
+            <div className={styles.rowMd}>
+              <Row>
+                <Col xs={4}>
+                  {images.map((image, i) => {
+                    const idx = i + 1;
+                    if (
+                      idx === c1 &&
+                      (currentCategory === "All" ||
+                        currentCategory === image.category)
+                    ) {
+                      c1 = c1 + 3;
+                      return (
+                        <div key={image._id} className={styles.img}>
+                          <div className={styles.overlay}>
+                            <Eye
+                              className={styles.eye}
+                              onClick={() => {
+                                setFullViewIndex(i);
+                              }}
+                            />
+                          </div>
+                          <Image src={image.url} alt={image.category} fluid />
                         </div>
-                        <Image
-                          key={image._id}
-                          src={image.url}
-                          alt={image.category}
-                          fluid
-                          className={styles.img}
-                        />
-                      </div>
-                    );
-                  }
-                })}
-              </Col>
-            </Row>
-          </div>
+                      );
+                    }
+                  })}
+                </Col>
+                <Col xs={4}>
+                  {images.map((image, i) => {
+                    const idx = i + 1;
 
-          <div className={styles.rowMd}>
-            <Row>
-              <Col xs={4}>
-                {images.map((image, i) => {
-                  //   const idx = i + 1;
-                  if (
-                    i === c1 &&
-                    (currentCategory === "All" ||
-                      currentCategory === image.category)
-                  ) {
-                    c1 = c1 + 3;
-                    return (
-                      <div key={image._id} className={styles.img}>
-                        <div className={styles.overlay}>
-                          <Eye
-                            className={styles.eye}
-                            onClick={() => {
-                              setFullViewIndex(i);
-                            }}
-                          />
+                    if (
+                      idx === c2 &&
+                      (currentCategory === "All" ||
+                        currentCategory === image.category)
+                    ) {
+                      c2 = c2 + 3;
+                      return (
+                        <div key={image._id} className={styles.img}>
+                          <div className={styles.overlay}>
+                            <Eye
+                              className={styles.eye}
+                              onClick={() => {
+                                setFullViewIndex(i);
+                              }}
+                            />
+                          </div>
+                          <Image src={image.url} alt={image.category} fluid />
                         </div>
-                        <Image src={image.url} alt={image.category} fluid />
-                      </div>
-                    );
-                  }
-                })}
-              </Col>
-              <Col xs={4}>
-                {images.map((image, i) => {
-                  if (
-                    i === c2 &&
-                    (currentCategory === "All" ||
-                      currentCategory === image.category)
-                  ) {
-                    c2 = c2 + 3;
-                    return (
-                      <div key={image._id} className={styles.img}>
-                        <div className={styles.overlay}>
-                          <Eye
-                            className={styles.eye}
-                            onClick={() => {
-                              setFullViewIndex(i);
-                            }}
-                          />
+                      );
+                    }
+                  })}
+                </Col>
+                <Col xs={4}>
+                  {images.map((image, i) => {
+                    const idx = i + 1;
+
+                    if (
+                      idx === c3 &&
+                      (currentCategory === "All" ||
+                        currentCategory === image.category)
+                    ) {
+                      c3 = c3 + 3;
+                      return (
+                        <div key={image._id} className={styles.img}>
+                          <div className={styles.overlay}>
+                            <Eye
+                              className={styles.eye}
+                              onClick={() => {
+                                setFullViewIndex(i);
+                              }}
+                            />
+                          </div>
+                          <Image src={image.url} alt={image.category} fluid />
                         </div>
-                        <Image src={image.url} alt={image.category} fluid />
-                      </div>
-                    );
-                  }
-                })}
-              </Col>
-              <Col xs={4}>
-                {images.map((image, i) => {
-                  if (
-                    i === c3 &&
-                    (currentCategory === "All" ||
-                      currentCategory === image.category)
-                  ) {
-                    c3 = c3 + 3;
-                    return (
-                      <div key={image._id} className={styles.img}>
-                        <div className={styles.overlay}>
-                          <Eye
-                            className={styles.eye}
-                            onClick={() => {
-                              setFullViewIndex(i);
-                            }}
-                          />
-                        </div>
-                        <Image src={image.url} alt={image.category} fluid />
-                      </div>
-                    );
-                  }
-                })}
-              </Col>
-            </Row>
-          </div>
+                      );
+                    }
+                  })}
+                </Col>
+              </Row>
+            </div>
+          )}
         </div>
       </CustomContainer>
       <br />

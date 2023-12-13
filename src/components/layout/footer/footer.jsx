@@ -51,6 +51,10 @@ const Footer = ({ pages }) => {
                 <Link href={page.href}>{page.name}</Link>
               </div>
             ))}
+            <div  className={styles.row}>
+                <ChevronRight stroke="#909090" className={styles.chevron} />
+                <Link href='/admin'>Admin Login</Link>
+              </div>
           </Section>
 
           <Section>

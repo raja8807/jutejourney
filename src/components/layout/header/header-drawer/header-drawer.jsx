@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./header-drawer.module.scss";
 import SocialLinks from "@/components/ui/social_links/social_links";
+import { signOut } from "next-auth/react";
 
 const { Offcanvas, Image } = require("react-bootstrap");
 
@@ -23,7 +24,7 @@ const HeaderDrawer = ({ show, setShow, pages }) => {
                 className={
                   router.pathname === page.href ? styles.active : "inactive"
                 }
-                onClick={()=> setShow(false)}
+                onClick={() => setShow(false)}
               >
                 <span>{page.name.toUpperCase()}</span>
               </Link>
@@ -34,8 +35,16 @@ const HeaderDrawer = ({ show, setShow, pages }) => {
         <br />
         <div className={styles.btn}>
           <CustomButton type={2}>FREE QUOTE</CustomButton>
-          <SocialLinks header/>
+          <SocialLinks header />
         </div>
+        <CustomButton
+          clickHandler={async () => {
+            await signOut();
+            setShow(false);
+          }}
+        >
+          Logout
+        </CustomButton>
       </Offcanvas.Body>
     </Offcanvas>
   );
