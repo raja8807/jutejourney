@@ -61,14 +61,7 @@ const Login = () => {
         >
           Login
         </CustomButton>
-        <CustomButton
-          clickHandler={async () => {
-            await signOut();
-          }}
-          //   disabled={!values.email || !values.password}
-        >
-          Logout
-        </CustomButton>
+     
       </form>
     </div>
   );
