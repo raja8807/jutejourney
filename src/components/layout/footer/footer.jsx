@@ -51,10 +51,10 @@ const Footer = ({ pages }) => {
                 <Link href={page.href}>{page.name}</Link>
               </div>
             ))}
-            <div  className={styles.row}>
-                <ChevronRight stroke="#909090" className={styles.chevron} />
-                <Link href='/admin'>Admin Login</Link>
-              </div>
+            <div className={styles.row}>
+              <ChevronRight stroke="#909090" className={styles.chevron} />
+              <Link href="/admin">Admin Login</Link>
+            </div>
           </Section>
 
           <Section>
@@ -73,12 +73,10 @@ const Footer = ({ pages }) => {
               >
                 <iframe
                   style={{ height: "100%", width: "100%", border: "0" }}
-                  frameborder="0"
                   src="https://www.google.com/maps/embed/v1/place?q=Tuticorin,+Tamil+Nadu,+India&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                 ></iframe>
               </div>
               <a
-                class="from-embedmap-code"
                 href="https://www.bootstrapskins.com/themes"
                 id="enable-maps-data"
               >

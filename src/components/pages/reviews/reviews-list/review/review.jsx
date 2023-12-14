@@ -1,8 +1,27 @@
-import { StarFill, Trash, Trash2 } from "react-bootstrap-icons";
+import { StarFill, Trash } from "react-bootstrap-icons";
 import styles from "./review.module.scss";
 import { Col } from "react-bootstrap";
-const Review = ({ data,index,setReviews }) => {
-  const { firstName, lastName, message, rating } = data;
+import axios from "axios";
+import { useSession } from "next-auth/react";
+const Review = ({ data, index, setReviews, storageReviews }) => {
+  const { firstName, lastName, message, rating, _id } = data;
+
+
+  const handleDelete = async () => {
+    try {
+      const res = await axios.delete(`/api/review?id=${_id}`);
+      console.log(res);
+      if (res.status === 200) {
+        setReviews((prev) => {
+          return prev.filter((r, i) => i !== index);
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const session = useSession();
 
   return (
     <Col xs={12} md={6}>
@@ -29,13 +48,9 @@ const Review = ({ data,index,setReviews }) => {
           </div>
           <p className={styles.message}>{message}</p>
         </div>
-        <Trash className={styles.trash} 
-        onClick={()=>{
-            setReviews((prev)=>{
-                return prev.filter((r,i)=> i!==index)
-            })
-        }}
-        />
+        {(session.data || storageReviews?.includes(_id)) && (
+          <Trash className={styles.trash} onClick={handleDelete} />
+        )}
       </div>
     </Col>
   );

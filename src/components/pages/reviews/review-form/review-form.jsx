@@ -1,11 +1,18 @@
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import styles from "./review-form.module.scss";
 import { StarFill } from "react-bootstrap-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const ReviewForm = ({ setReviews }) => {
+const ReviewForm = ({ setReviews, storageReviews, setLocalStorage }) => {
   const [hoveredRating, setHoveredRating] = useState(0);
   const [selectedRating, setSelectedRating] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const r = localStorage.getItem("reviews");
+    setLocalStorage(r ? JSON.parse(r) : []);
+  }, []);
 
   const [values, setValues] = useState({
     firstName: "",
@@ -13,17 +20,25 @@ const ReviewForm = ({ setReviews }) => {
     message: "",
   });
 
-  const handleSubmit = () => {
-    setReviews((prev) => [
-      { ...values, rating: selectedRating, _id: Math.random() },
-      ...prev,
-    ]);
-    setValues({
-      firstName: "",
-      lastName: "",
-      message: "",
-    });
-    setSelectedRating(0);
+  const handleSubmit = async () => {
+    setIsLoading(true);
+    try {
+      const newReview = { ...values, rating: selectedRating };
+      const res = await axios.post("/api/review", newReview);
+      setReviews((prev) => [res.data, ...prev]);
+      const newStorage = [...storageReviews, res.data._id];
+      localStorage.setItem("reviews", JSON.stringify(newStorage));
+      setLocalStorage(newStorage);
+      setValues({
+        firstName: "",
+        lastName: "",
+        message: "",
+      });
+      setSelectedRating(0);
+    } catch (err) {
+      console.log(err);
+    }
+    setIsLoading(false);
   };
 
   return (
@@ -94,9 +109,8 @@ const ReviewForm = ({ setReviews }) => {
           !values.message ||
           !selectedRating
         }
-        clickHandler={() => {
-          handleSubmit();
-        }}
+        isLoading={isLoading}
+        clickHandler={handleSubmit}
       >
         Submit
       </CustomButton>
