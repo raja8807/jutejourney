@@ -42,6 +42,24 @@ const PRODUCT_DETALS = [
       "Check out our collection of foldable cotton bags, available in 3 styles.",
     ],
     color: "#63c1d5",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 6,
+      },
+      {
+        id: "2",
+        size: 6,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+    ],
   },
   {
     id: "3",
@@ -51,6 +69,28 @@ const PRODUCT_DETALS = [
       "We have 8oz bags in a range of styles and colours, from fully dyed bags to premium yarn dyed canvas!",
     ],
     color: "#f5b61a",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 5,
+      },
+      {
+        id: "3",
+        size: 7,
+      },
+      {
+        id: "4",
+        size: 6,
+      },
+      {
+        id: "5",
+        size: 6,
+      },
+    ],
   },
   {
     id: "4",
@@ -59,6 +99,24 @@ const PRODUCT_DETALS = [
       "Are you after a heavy weight canvas bag? If so we have a range of styles to choose from! Available in 8 popular colours.",
     ],
     color: "#764594",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 12,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+    ],
   },
   {
     id: "5",
@@ -67,6 +125,24 @@ const PRODUCT_DETALS = [
       "We have a range of styles available, still can't find the bag you are looking for? Try our bespoke service",
     ],
     color: "#4db748",
+    images: [
+      {
+        id: "1",
+        size: 5,
+      },
+      {
+        id: "3",
+        size: 7,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+    ],
   },
   {
     id: "6",
@@ -76,6 +152,20 @@ const PRODUCT_DETALS = [
     ],
     size: "Classic 35 x 39 x 15",
     color: "#4db748",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 12,
+      },
+    ],
   },
   {
     id: "7",
@@ -86,6 +176,28 @@ const PRODUCT_DETALS = [
     ],
     size: "35 x 39 x 15",
     color: "#8fc63f",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 6,
+      },
+      {
+        id: "3",
+        size: 6,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+      {
+        id: "5",
+        size: 12,
+      },
+    ],
   },
   {
     id: "8",
@@ -95,6 +207,24 @@ const PRODUCT_DETALS = [
       "Check out our KIPU jute bag for a fully dyed bag, looking to keep that natural look too? If so check out our JJC1 or JJC2 bags with natural front & back panels and coloured gussets & handles.",
     ],
     color: "#8fc63f",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 5,
+      },
+      {
+        id: "4",
+        size: 7,
+      },
+    ],
   },
   {
     id: "9",
@@ -102,6 +232,24 @@ const PRODUCT_DETALS = [
     desc: [],
     size: "30 x 30 x20",
     color: "#36a3da",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 6,
+      },
+      {
+        id: "4",
+        size: 6,
+      },
+    ],
   },
   {
     id: "10",
@@ -111,6 +259,28 @@ const PRODUCT_DETALS = [
       "We also have small jute and cotton bags, perfect for small gifts or party bags.",
     ],
     color: "#fedc36",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 5,
+      },
+      {
+        id: "3",
+        size: 4,
+      },
+      {
+        id: "4",
+        size: 3,
+      },
+      {
+        id: "5",
+        size: 12,
+      },
+    ],
   },
   {
     id: "11",
@@ -121,6 +291,28 @@ const PRODUCT_DETALS = [
     ],
 
     color: "#b14f97",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 6,
+      },
+      {
+        id: "3",
+        size: 6,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+      {
+        id: "5",
+        size: 12,
+      },
+    ],
   },
   {
     id: "12",
@@ -130,12 +322,56 @@ const PRODUCT_DETALS = [
       "Our JJBB1 jute bag has a coloured base to make your bag stand out! soft cotton webbing handles allows the bag to be easily carried over your shoulder.",
     ],
     color: "#efcece",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 6,
+      },
+      {
+        id: "3",
+        size: 6,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+    ],
   },
   {
     id: "13",
     name: "BOTTOM GUSSET JUTE TOTE",
     desc: [],
     color: "#f2c235",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 5,
+      },
+      {
+        id: "3",
+        size: 7,
+      },
+      {
+        id: "4",
+        size: 6,
+      },
+      {
+        id: "6",
+        size: 6,
+      },
+      {
+        id: "5",
+        size: 6,
+      },
+    ],
   },
   {
     id: "14",
@@ -147,6 +383,20 @@ const PRODUCT_DETALS = [
     ],
     size: "Available in 2 Sizes",
     color: "#f2c235",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 12,
+      },
+    ],
   },
   {
     id: "15",
@@ -156,6 +406,24 @@ const PRODUCT_DETALS = [
       "Looking for premium retail quality? Check out our JJCB1 pouch with fused black cotton lining. We also have at 16oz pouches with zippers, available in black and natural canvas.",
     ],
     color: "#f2c235",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 12,
+      },
+      {
+        id: "4",
+        size: 12,
+      },
+    ],
   },
   {
     id: "16",
@@ -165,6 +433,20 @@ const PRODUCT_DETALS = [
       "Our jute & cotton pouches are available in different sizes and are suitable for a range of uses, from small gift bags to favours and packaging.",
     ],
     color: "#f78d1e",
+    images: [
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "3",
+        size: 12,
+      },
+    ],
   },
   {
     id: "17",
@@ -174,6 +456,24 @@ const PRODUCT_DETALS = [
       "All items can be branded with your artwork from 100pcs!",
     ],
     color: "#f78d1e",
+    images: [
+      {
+        id: "3",
+        size: 12,
+      },
+      {
+        id: "1",
+        size: 12,
+      },
+      {
+        id: "2",
+        size: 12,
+      },
+      {
+        id: "4",
+        size: 6,
+      },
+    ],
   },
   {
     id: "18",
@@ -184,6 +484,36 @@ const PRODUCT_DETALS = [
       "Choose from single bottle bags, to 2 bottle bags or 3 bottle bags, each available with or without window. We also have a 6 bottle bag with removable inner divider, allowing you to use the bag as a standard shopper too!",
     ],
     color: "#f78d1e",
+    images: [
+        {
+          id: "1",
+          size: 12,
+        },
+        {
+          id: "2",
+          size: 5,
+        },
+        {
+          id: "3",
+          size: 7,
+        },
+        {
+          id: "4",
+          size: 6,
+        },
+        {
+          id: "5",
+          size: 6,
+        },
+        {
+          id: "6",
+          size: 12,
+        },
+        {
+          id: "7",
+          size: 12,
+        },
+      ],
   },
 ];
 

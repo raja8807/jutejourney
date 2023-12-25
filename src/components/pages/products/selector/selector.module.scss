@@ -30,5 +30,8 @@
       background-color: $color_primary;
       font-weight: 500;
     }
+    &.active{
+        color: white;
+    }
   }
 }
