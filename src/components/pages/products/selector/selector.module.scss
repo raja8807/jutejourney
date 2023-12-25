@@ -1,0 +1,34 @@
+.selector {
+  border: 1px solid $color_primary;
+  &.hiddenMd {
+    .menu {
+      cursor: pointer;
+      color: $color_primary;
+      font-size: 30px;
+      display: none;
+      margin-bottom: 20px;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    @include respond-below(md) {
+      .menu {
+        display: initial;
+      }
+      border: none;
+      > div {
+        display: none;
+      }
+    }
+  }
+  > div {
+    border-bottom: 1px solid $color_primary;
+    padding: 10px 5px;
+    cursor: pointer;
+    &:hover,
+    &.active {
+      background-color: $color_primary;
+      font-weight: 500;
+    }
+  }
+}

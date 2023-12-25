@@ -1,7 +1,11 @@
 import CustomContainer from "@/components/ui/custom_container/custom_container";
 import SectionHeading from "@/components/ui/section-heading/section-heading";
+import Selector from "./selector/selector";
+import { useState } from "react";
+import ProductDesc from "./product/product";
+import PRODUCT_DETALS from "./constant";
 
-const { Image } = require("react-bootstrap");
+const { Row, Col } = require("react-bootstrap");
 
 const ProductsScreen = () => {
   const index = [];
@@ -10,19 +14,25 @@ const ProductsScreen = () => {
     index.push(`${i}`);
   }
 
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
   return (
     <>
       <SectionHeading center>Products</SectionHeading>
       <br />
       <CustomContainer>
-        {index.map((i) => (
-          <Image
-            key={i}
-            src={`/images/products/producs (${i}).jpg`}
-            fluid
-            alt={i}
-          />
-        ))}
+        <Row>
+          <Col xs={12} lg={3}>
+            <Selector
+              products={PRODUCT_DETALS}
+              selectedIndex={selectedIndex}
+              setSelectedIndex={setSelectedIndex}
+            />
+          </Col>
+          <Col xs={12} lg={9}>
+            <ProductDesc product={PRODUCT_DETALS[selectedIndex]} />
+          </Col>
+        </Row>
       </CustomContainer>
       <br />
     </>

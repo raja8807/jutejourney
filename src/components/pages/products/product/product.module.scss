@@ -1,0 +1,31 @@
+.product {
+  .head {
+    background-color: $color_medium_grey;
+    padding: 10px;
+
+    .desc {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      P {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    small {
+      font-size: 13px;
+      font-weight: 500;
+    }
+  }
+
+  .img {
+    padding: 20px;
+
+    // img {
+    //   border: 2px solid;
+
+    //   border-radius: 5px;
+    // }
+  }
+}
