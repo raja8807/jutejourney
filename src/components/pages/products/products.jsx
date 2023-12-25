@@ -4,6 +4,7 @@ import Selector from "./selector/selector";
 import { useState } from "react";
 import ProductDesc from "./product/product";
 import PRODUCT_DETALS from "./constant";
+import Customiized from "../about/cutomized/customized";
 
 const { Row, Col } = require("react-bootstrap");
 
@@ -33,6 +34,7 @@ const ProductsScreen = () => {
             <ProductDesc product={PRODUCT_DETALS[selectedIndex]} />
           </Col>
         </Row>
+        <Customiized />
       </CustomContainer>
       <br />
     </>

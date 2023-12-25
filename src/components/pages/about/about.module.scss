@@ -1,0 +1,71 @@
+.juteJourney {
+  color: $color_dark_grey;
+  .text {
+    text-align: center;
+    font-size: 15px;
+    margin: 16px 0;
+
+    @include respond-above(sm) {
+      font-size: 16px;
+    }
+  }
+}
+.holder {
+  background-color: $color_light_grey;
+
+  .wrap {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+  }
+  .box {
+    text-align: center;
+    width: 100%;
+    margin: 0 50px;
+    .top {
+      background-color: $color_medium_grey;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 0;
+      margin-bottom: 5px;
+      gap: 10px;
+
+      .icon {
+        height: 60px;
+        width: 60px;
+        background-color: $color_primary;
+        //   padding: 10px;
+        color: white;
+        @include flexCenter;
+        border-radius: 50%;
+        svg {
+          font-size: 30px;
+        }
+      }
+      span {
+        color: $color_primary;
+        font-weight: 600;
+        font-size: 17px;
+      }
+    }
+
+    .bottom {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+
+  @include respond-below(md) {
+    .wrap {
+      flex-direction: column;
+      padding: 10px 0;
+    }
+
+    .box {
+      width: auto;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+  }
+}

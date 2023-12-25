@@ -1,5 +1,6 @@
 import { Spinner } from "react-bootstrap";
 import styles from "./custom_button.module.scss";
+import { useRouter } from "next/router";
 
 const CustomButton = ({
   children,
@@ -7,15 +8,22 @@ const CustomButton = ({
   clickHandler = () => {},
   disabled,
   btnType = "button",
-  isLoading
+  isLoading,
+  href,
 }) => {
+  const router = useRouter();
+
   return (
     <button
       type={btnType}
       className={`${styles.custom_button} ${styles[`btnType_${type}`]}`}
       onClick={(e) => {
         e.preventDefault();
-        clickHandler(e);
+        if (href) {
+          router.replace(href);
+        } else {
+          clickHandler(e);
+        }
       }}
       disabled={disabled || isLoading}
     >

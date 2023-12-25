@@ -515,6 +515,13 @@ const PRODUCT_DETALS = [
         },
       ],
   },
+  // {
+  //   id: "19",
+  //   name: "Customized",
+  //   desc: [],
+  //   color: "#f78d1e",
+  //   images: [],
+  // },
 ];
 
 export default PRODUCT_DETALS;

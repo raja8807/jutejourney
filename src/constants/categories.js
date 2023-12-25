@@ -1,3 +1,3 @@
-const imageCategories = ['cat1','cat2','cat3']
+const imageCategories = []
 
 export default imageCategories

@@ -1,17 +1,39 @@
-.eachSlideEffect {
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    height: calc(100vh - 200px);
-  }
+.holder {
+  position: relative;
 
-  span {
-    padding: 20px;
-    font-size: 20px;
-    background: #efefef;
-    text-align: center;
+  img {
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    @include flexCenter;
+    flex-direction: column;
+    gap: 70px;
+
+    .cap{
+      height: 100px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      padding: 0 10px;
+      max-width: 600px;
+      font-size: 50px;
+    }
+
+    .btns {
+      display: flex;
+      gap: 10px;
+    }
+    // z-index: 10;
   }
 }
-

@@ -12,34 +12,36 @@ const {
 const ReviewsSection = () => {
   const reviews = [
     {
+      id: "4",
+      text: "Perfect for every need. I'm impressed by their quality and environmental commitment. Highly recommend supporting this eco-friendly brand.",
+      isMale: true,
+      name: "Firstname Lastname 4",
+      location: "Tuticorin",
+    },
+    {
       id: "1",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga eveniet iste et non rerum vel ducimus nam labore sit ab laborum, natus reprehenderit voluptates nostrum temporibus ullam earum nihil.",
+      text: "Love these bags! They're strong, look great, and eco-friendly. Perfect for all needs. Impressed by quality and planet-friendly approach. Highly recommend supporting this eco-conscious company.",
       isMale: true,
       name: "Firstname Lastname 1",
       location: "Coimbatore",
     },
     {
       id: "2",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga eveniet iste et non rerum vel ducimus nam labore sit ab laborum, natus reprehenderit voluptates nostrum temporibus ullam earum nihil.",
+      text: "Love these eco-bags! Sturdy, fashionable, and sustainable. Ideal for various uses. Impressed by their quality and commitment to the environment. Highly recommended.",
       isMale: false,
       name: "Firstname Lastname 2",
       location: "Chennai",
     },
     {
       id: "3",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga eveniet iste et non rerum vel ducimus nam labore sit ab laborum, natus reprehenderit voluptates nostrum temporibus ullam earum nihil.",
+      text: "These bags are fantastic! Durable, trendy, and good for the planet. Great quality and environmentally friendly. Recommend this eco-aware company wholeheartedly.",
       isMale: false,
       name: "Firstname Lastname 3",
       location: "Tirunelveli",
     },
-    {
-      id: "4",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fuga eveniet iste et non rerum vel ducimus nam labore sit ab laborum, natus reprehenderit voluptates nostrum temporibus ullam earum nihil.",
-      isMale: true,
-      name: "Firstname Lastname 4",
-      location: "Tuticorin",
-    },
   ];
+
+  
 
   return (
     <>
@@ -63,7 +65,7 @@ const ReviewsSection = () => {
           ))}
         </Carousel>
         <div className={styles.btn}>
-          <CustomButton>View More</CustomButton>
+          <CustomButton href='/reviews'>View More</CustomButton>
         </div>
         <br />
       </CustomContainer>

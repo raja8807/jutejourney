@@ -55,7 +55,7 @@ const GalleryScreen = ({ allImages = [] }) => {
       <br />
       <CustomContainer className={styles.gallery}>
         <div>
-          <div className={styles.tabs}>
+          {/* <div className={styles.tabs}>
             <div
               className={`${styles.tab} ${
                 currentCategory === "All" && styles.active
@@ -83,7 +83,7 @@ const GalleryScreen = ({ allImages = [] }) => {
                 {c}
               </div>
             ))}
-          </div>
+          </div> */}
           <br />
 
           {isSm ? (

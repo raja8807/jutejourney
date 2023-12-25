@@ -1,35 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import styles from './banner.module.scss'
+import styles from "./banner.module.scss";
+import { Carousel, Image } from "react-bootstrap";
+import CustomButton from "@/components/ui/custom_button/custom_button";
+
+const OverLay = ({ children, isSliding }) => (
+  <div className={styles.overlay}>
+    <div className={styles.cap}>
+      {!isSliding && <h1 data-aos="fade-left">{children}</h1>}
+    </div>
+    {!isSliding && (
+      <div className={styles.btns} data-aos="fade-right">
+        <CustomButton href="/products">View Products</CustomButton>
+        <CustomButton href="/contact">Contact Now</CustomButton>
+      </div>
+    )}
+  </div>
+);
 
 const Banner = () => {
-  const images = [
-    "https://images.unsplash.com/photo-1509721434272-b79147e0e708?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-    "https://images.unsplash.com/photo-1506710507565-203b9f24669b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1536&q=80",
-    "https://images.unsplash.com/photo-1536987333706-fc9adfb10d91?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-  ];
+  const [isSliding, setIsSliding] = useState(false);
 
   return (
     <>
-      <Slide indicators>
-        <div className={styles.eachSlideEffect}>
-          <div style={{ backgroundImage: `url(${images[0]})` }}>
-            <span>Slide 1</span>
-          </div>
-        </div>
-        <div className={styles.eachSlideEffect}>
-          <div style={{ backgroundImage: `url(${images[1]})` }}>
-            <span>Slide 2</span>
-          </div>
-        </div>
-        <div className={styles.eachSlideEffect}>
-          <div style={{ backgroundImage: `url(${images[2]})` }}>
-            <span>Slide 3</span>
-          </div>
-        </div>
-      </Slide>
-      
+      <Carousel
+        onSlide={() => {
+          setIsSliding(true);
+        }}
+        onSlid={() => {
+          setIsSliding(false);
+        }}
+      >
+        <Carousel.Item className={styles.holder}>
+          <OverLay isSliding={isSliding}>Empowerment in Every Weave</OverLay>
+          <Image src="/images/banner/1.jpg" alt="xx" fluid />
+        </Carousel.Item>
+        <Carousel.Item className={styles.holder}>
+          <Image src="/images/banner/2.jpg" alt="xx" fluid />
+          <OverLay isSliding={isSliding}>
+            Excellent service with no hidden costs
+          </OverLay>
+        </Carousel.Item>
+        <Carousel.Item className={styles.holder}>
+          <OverLay isSliding={isSliding}>Custom made bags for you</OverLay>
+          <Image src="/images/banner/1.jpg" alt="xx" fluid />
+        </Carousel.Item>
+        <Carousel.Item className={styles.holder}>
+          <OverLay isSliding={isSliding}>Innavation and Eco Friendly</OverLay>
+          <Image src="/images/banner/2.jpg" alt="xx" fluid />
+        </Carousel.Item>
+      </Carousel>
+      <br/>
     </>
   );
 };
