@@ -15,33 +15,31 @@ const ReviewsSection = () => {
       id: "4",
       text: "Perfect for every need. I'm impressed by their quality and environmental commitment. Highly recommend supporting this eco-friendly brand.",
       isMale: true,
-      name: "Firstname Lastname 4",
+      name: "Mohan Ram",
       location: "Tuticorin",
     },
     {
       id: "1",
       text: "Love these bags! They're strong, look great, and eco-friendly. Perfect for all needs. Impressed by quality and planet-friendly approach. Highly recommend supporting this eco-conscious company.",
       isMale: true,
-      name: "Firstname Lastname 1",
-      location: "Coimbatore",
+      name: "Satheesh Kumar",
+      location: "Tirunelveli",
     },
     {
       id: "2",
       text: "Love these eco-bags! Sturdy, fashionable, and sustainable. Ideal for various uses. Impressed by their quality and commitment to the environment. Highly recommended.",
       isMale: false,
-      name: "Firstname Lastname 2",
+      name: "Sundari Raj",
       location: "Chennai",
     },
-    {
-      id: "3",
-      text: "These bags are fantastic! Durable, trendy, and good for the planet. Great quality and environmentally friendly. Recommend this eco-aware company wholeheartedly.",
-      isMale: false,
-      name: "Firstname Lastname 3",
-      location: "Tirunelveli",
-    },
+    // {
+    //   id: "3",
+    //   text: "These bags are fantastic! Durable, trendy, and good for the planet. Great quality and environmentally friendly. Recommend this eco-aware company wholeheartedly.",
+    //   isMale: false,
+    //   name: "Firstname Lastname 3",
+    //   location: "Tirunelveli",
+    // },
   ];
-
-  
 
   return (
     <>
@@ -65,7 +63,7 @@ const ReviewsSection = () => {
           ))}
         </Carousel>
         <div className={styles.btn}>
-          <CustomButton href='/reviews'>View More</CustomButton>
+          <CustomButton href="/reviews">View More</CustomButton>
         </div>
         <br />
       </CustomContainer>
