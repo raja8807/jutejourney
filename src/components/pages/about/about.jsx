@@ -18,12 +18,70 @@ const AboutScreen = () => {
   return (
     <>
       <AboutSection isAboutPage />
+      <SectionHeading center>Our Journey</SectionHeading>
+      <CustomContainer>
+        <Row>
+          <Col xs={12} lg={6}>
+            <Image
+              src="/images/about/ab1 (1).JPG"
+              fluid
+              alt="1"
+              className={styles.abImg}
+            />
+          </Col>
+          <Col xs={12} lg={6}>
+            <Image
+              src="/images/about/ab1 (4).jpeg"
+              fluid
+              alt="1"
+              className={styles.abImg}
+            />
+          </Col>
+          <Col xs={12} lg={6}>
+            <Image
+              src="/images/about/ab1 (2).JPG"
+              fluid
+              alt="1"
+              className={styles.abImg}
+            />
+          </Col>
+          <Col xs={12} lg={6}>
+            <Image
+              src="/images/about/ab1 (1).jpeg"
+              fluid
+              alt="1"
+              className={styles.abImg}
+            />
+          </Col>
+          <Col xs={12} lg={6}>
+            <Image
+              src="/images/about/ab1 (2).jpeg"
+              fluid
+              alt="1"
+              className={styles.abImg}
+            />
+          </Col>
+          <Col xs={12} lg={6}>
+            <Image
+              src="/images/about/ab1 (3).jpeg"
+              fluid
+              alt="1"
+              className={styles.abImg}
+            />
+          </Col>
+        </Row>
+        <div className={styles.center}>
+          <CustomButton href="/gallery">View Our Gallery</CustomButton>
+        </div>
+      </CustomContainer>
+      <br />
       <SectionHeading
         center
         caption="You imagine it, we'll create it | Lead times from 8 weeks"
       >
         CUSTOMIZED SERVICE
       </SectionHeading>
+
       <CustomContainer className={styles.juteJourney}>
         <br />
         <Row>
@@ -41,6 +99,7 @@ const AboutScreen = () => {
           Our artwork team would be happy to help with that too!
         </p>
       </CustomContainer>
+
       <div className={styles.holder}>
         <CustomContainer className={styles.wrap}>
           <div className={styles.box}>
