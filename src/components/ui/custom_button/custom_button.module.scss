@@ -115,19 +115,29 @@ $diagWidth: 148px;
       transition: 0.5s all ease;
     }
 
-   &:not(:disabled){
-    &:hover {
-      color: $color_primary;
-      border-color: $color_primary;
+    &:not(:disabled) {
+      &:hover {
+        color: $color_primary;
+        border-color: $color_primary;
 
-      &::before {
-        height: 100%;
-      }
-      &::after {
-        height: 101%;
+        &::before {
+          height: 100%;
+        }
+        &::after {
+          height: 101%;
+        }
       }
     }
-   }
+  }
+
+  &.btnType_4 {
+    background-color: transparent;
+    border: 2px solid $color_primary;
+    color: white;
+    &:hover{
+      background-color: white;
+      color: black;
+    }
   }
 
   .spinner {

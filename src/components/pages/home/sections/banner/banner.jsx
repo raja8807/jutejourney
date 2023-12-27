@@ -4,6 +4,7 @@ import "react-slideshow-image/dist/styles.css";
 import styles from "./banner.module.scss";
 import { Carousel, Image } from "react-bootstrap";
 import CustomButton from "@/components/ui/custom_button/custom_button";
+import Link from "next/link";
 
 const OverLay = ({ children, isSliding }) => (
   <div className={styles.overlay}>
@@ -13,7 +14,13 @@ const OverLay = ({ children, isSliding }) => (
     {!isSliding && (
       <div className={styles.btns} data-aos="fade-right">
         <CustomButton href="/products">View Products</CustomButton>
-        <CustomButton href="/contact">Contact Now</CustomButton>
+        <Link
+          href="/assets/catelogue.pdf"
+          download={"LEDP - Jute Journey.pdf"}
+          target="_blank"
+        >
+          <CustomButton type={4}>Download Catelogue</CustomButton>
+        </Link>
       </div>
     )}
   </div>
@@ -51,7 +58,7 @@ const Banner = () => {
           <Image src="/images/banner/2.jpg" alt="xx" fluid />
         </Carousel.Item>
       </Carousel>
-      <br/>
+      <br />
     </>
   );
 };

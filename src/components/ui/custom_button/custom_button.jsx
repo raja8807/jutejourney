@@ -18,7 +18,7 @@ const CustomButton = ({
       type={btnType}
       className={`${styles.custom_button} ${styles[`btnType_${type}`]}`}
       onClick={(e) => {
-        e.preventDefault();
+        // e.preventDefault();
         if (href) {
           router.replace(href);
         } else {
