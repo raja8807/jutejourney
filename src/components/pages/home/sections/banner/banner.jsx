@@ -18,7 +18,7 @@ const OverLay = ({ children, isSliding }) => (
           download={"LEDP - Jute Journey.pdf"}
           target="_blank"
         >
-          <CustomButton type={4}>Download Catelogue</CustomButton>
+          <CustomButton type={4}>Download Catalogue</CustomButton>
         </Link>
       </div>
     )}
