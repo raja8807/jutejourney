@@ -21,9 +21,8 @@ const CustomButton = ({
         // e.preventDefault();
         if (href) {
           router.replace(href);
-        } else {
-          clickHandler(e);
         }
+        clickHandler(e);
       }}
       disabled={disabled || isLoading}
     >

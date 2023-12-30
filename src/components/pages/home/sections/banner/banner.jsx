@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import styles from "./banner.module.scss";
 import { Carousel, Image } from "react-bootstrap";

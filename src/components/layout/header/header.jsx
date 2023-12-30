@@ -42,7 +42,9 @@ const Header = ({ pages }) => {
               </Link>
             ))}
 
-            <CustomButton type={2}>FREE QUOTE</CustomButton>
+            <CustomButton type={2} href="/quote">
+              FREE QUOTE
+            </CustomButton>
           </nav>
           <List
             className={styles.menuIcon}
@@ -53,7 +55,6 @@ const Header = ({ pages }) => {
         </div>
       </CustomContainer>
     </header>
-    
   );
 };
 

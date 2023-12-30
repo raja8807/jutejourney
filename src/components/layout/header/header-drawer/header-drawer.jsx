@@ -3,12 +3,14 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "./header-drawer.module.scss";
 import SocialLinks from "@/components/ui/social_links/social_links";
-import { signOut } from "next-auth/react";
+import { getSession, signOut, useSession } from "next-auth/react";
 
 const { Offcanvas, Image } = require("react-bootstrap");
 
 const HeaderDrawer = ({ show, setShow, pages }) => {
   const router = useRouter();
+  const sesssion = useSession();
+
   return (
     <Offcanvas show={show} onHide={() => setShow(false)} placement="end">
       <Offcanvas.Header closeButton>
@@ -34,18 +36,41 @@ const HeaderDrawer = ({ show, setShow, pages }) => {
         <br />
         <br />
         <div className={styles.btn}>
-          <CustomButton type={2}>FREE QUOTE</CustomButton>
+          <CustomButton
+            type={2}
+            href="/quote"
+            clickHandler={async () => {
+              setShow(false);
+            }}
+          >
+            FREE QUOTE
+          </CustomButton>
           <SocialLinks header />
         </div>
-        <CustomButton
-          clickHandler={async () => {
-            await signOut();
-            setShow(false);
-          }}
-        >
-          Logout
-        </CustomButton>
       </Offcanvas.Body>
+      <div className={styles.btns}>
+        {sesssion.data ? (
+          <CustomButton
+            type={3}
+            clickHandler={async () => {
+              await signOut();
+              setShow(false);
+            }}
+          >
+            Logout
+          </CustomButton>
+        ) : (
+          <CustomButton
+            href="/admin"
+            type={3}
+            clickHandler={async () => {
+              setShow(false);
+            }}
+          >
+            Login
+          </CustomButton>
+        )}
+      </div>
     </Offcanvas>
   );
 };

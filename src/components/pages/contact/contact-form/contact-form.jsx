@@ -1,27 +1,102 @@
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import styles from "./contact-form.module.scss";
+import { useState } from "react";
+import axios from "axios";
+import { Check2Circle } from "react-bootstrap-icons";
 
 const ContactForm = () => {
+  // https://formspree.io/f/myyryzop
+
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const sendMessage = async () => {
+    setIsLoading(true);
+    try {
+      const res = await axios.post("https://formspree.io/f/myyryzop", {
+        email: values.email,
+        message: values,
+      });
+      console.log(res);
+      if (res) {
+        setIsSuccess(true);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    setIsLoading(false);
+  };
+
   return (
     <form
       className={styles.contactForm}
       onSubmit={(e) => {
         e.preventDefault();
+        sendMessage();
       }}
     >
       <p className={styles.head}>
         Contact Us For <span>Help</span>
       </p>
-
-      <input type="text" placeholder="Name" />
-      <input type="text" placeholder="Email" />
-      <input type="text" placeholder="Phone" />
-      <textarea placeholder="Message" rows={5} />
-      <div className={styles.btn}>
-        <CustomButton type={3} btnType="submit" >
-          Submit
-        </CustomButton>
-      </div>
+      {isSuccess ? (
+        <div className={styles.success}>
+          <Check2Circle />
+          <p>Thank you!</p>
+          <small>Your message has been sent</small>
+        </div>
+      ) : (
+        <>
+          <input
+            type="text"
+            placeholder="Name"
+            required
+            value={values.name}
+            onChange={(e) => {
+              setValues((prev) => ({ ...prev, name: e.target.value }));
+            }}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            value={values.email}
+            onChange={(e) => {
+              setValues((prev) => ({ ...prev, email: e.target.value }));
+            }}
+          />
+          <input
+            type="tel"
+            placeholder="Phone"
+            required
+            pattern="[0-9]{10}"
+            value={values.phone}
+            onChange={(e) => {
+              setValues((prev) => ({ ...prev, phone: e.target.value }));
+            }}
+          />
+          <textarea
+            placeholder="Message"
+            rows={5}
+            required
+            value={values.message}
+            onChange={(e) => {
+              setValues((prev) => ({ ...prev, message: e.target.value }));
+            }}
+          />
+          <div className={styles.btn}>
+            <CustomButton type={3} btnType="submit" isLoading={isLoading}>
+              Submit
+            </CustomButton>
+          </div>
+        </>
+      )}
     </form>
   );
 };
