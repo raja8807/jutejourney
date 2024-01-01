@@ -13,7 +13,7 @@ const ContactPage = () => {
         <Row>
           <Col xs={12} md={7}>
             <ContactForm />
-            ugh
+            
           </Col>
           <Col xs={12} md={5}>
             <ContactDetails />
