@@ -17,7 +17,11 @@ const AboutSection = ({ isAboutPage }) => {
           <Col sm={12} md={6} lg={8} className={styles.content}>
             <div className={styles.abt}>
               <p>
-                Empowerment in Every Weave: Discover the perfect blend of style
+                Jute Bag Journey is a combined initiative of NABARD, TNSRLM
+                Tenkasi, and AOS Mission Tuticorin. This initiative aims to
+                bring high-quality and durable jute bag products created by
+                Tenkasi SHG women to a global audience.
+                {/* Empowerment in Every Weave: Discover the perfect blend of style
                 and substance with our jute bags, meticulously crafted by 90
                 SelfHelp Group (SHG) women Tenkasi District who have undergone a
                 transformative manufacturing training program (LEDP). Supported
@@ -36,8 +40,9 @@ const AboutSection = ({ isAboutPage }) => {
                 to eliminate plastics and embrace a sustainable, green future.
                 Join us in making a statement - one that blends style,
                 empowerment, and environmental consciousness in Tenkasi
-                District.
+                District. */}
               </p>
+              <br/>
             </div>
             <Row>
               <Col className={styles.feature} xs={6}>

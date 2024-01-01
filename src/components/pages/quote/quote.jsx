@@ -34,7 +34,6 @@ const QuoteScreen = () => {
         email: values.email,
         message: values,
       });
-      console.log(res);
       if (res) {
         setIsSuccess(true);
         setValues({

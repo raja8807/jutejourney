@@ -1,12 +1,9 @@
 import CustomButton from "@/components/ui/custom_button/custom_button";
 import styles from "./contact-form.module.scss";
 import { useState } from "react";
-import axios from "axios";
 import { Check2Circle } from "react-bootstrap-icons";
 
-const ContactForm = () => {
-  // https://formspree.io/f/myyryzop
-
+const ContactFormXX = () => {
   const [values, setValues] = useState({
     name: "",
     email: "",
@@ -20,9 +17,13 @@ const ContactForm = () => {
   const sendMessage = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.post("https://formspree.io/f/myyryzop", {
-        email: values.email,
-        message: values,
+      const res = await fetch("https://formspree.io/f/myyryzop", {
+        method: "POST",
+        body: JSON.stringify({
+          email: values.email,
+          message: values,
+        }),
+        mode: "no-cors",
       });
       console.log(res);
       if (res) {
@@ -37,9 +38,9 @@ const ContactForm = () => {
   return (
     <form
       className={styles.contactForm}
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
-        sendMessage();
+        await sendMessage();
       }}
     >
       <p className={styles.head}>
@@ -101,4 +102,4 @@ const ContactForm = () => {
   );
 };
 
-export default ContactForm;
+export default ContactFormXX;
