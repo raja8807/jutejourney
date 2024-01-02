@@ -29,7 +29,7 @@ const ReviewsSection = () => {
       id: "2",
       text: "Love these eco-bags! Sturdy, fashionable, and sustainable. Ideal for various uses. Impressed by their quality and commitment to the environment. Highly recommended.",
       isMale: false,
-      name: "Sundari Raj",
+      name: "Vasantha",
       location: "Chennai",
     },
     // {
