@@ -30,7 +30,7 @@ const QuoteScreen = () => {
   const sendMessage = async () => {
     setIsLoading(true);
     try {
-      const res = await axios.post("https://formspree.io/f/myyryzop", {
+      const res = await axios.post("https://formspree.io/f/mbjnllvl", {
         email: values.email,
         message: values,
       });

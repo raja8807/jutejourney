@@ -17,7 +17,7 @@ const ContactFormXX = () => {
   const sendMessage = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch("https://formspree.io/f/myyryzop", {
+      const res = await fetch("https://formspree.io/f/mbjnllvl", {
         method: "POST",
         body: JSON.stringify({
           email: values.email,
