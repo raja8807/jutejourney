@@ -11,10 +11,10 @@ const pages = [
     name: "Products",
     href: "/products",
   },
-  {
-    name: "Gallery",
-    href: "/gallery",
-  },
+  // {
+  //   name: "Gallery",
+  //   href: "/gallery",
+  // },
   {
     name: "Reviews",
     href: "/reviews",
