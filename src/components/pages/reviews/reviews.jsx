@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ReviewForm from "./review-form/review-form";
 import ReviewsList from "./reviews-list/reviews-list";
+import ReviewsSection from "../home/sections/reviews/reviews";
 
 const {
   default: CustomContainer,
@@ -24,6 +25,7 @@ const ReviewsPage = ({ Allreviews }) => {
       </SectionHeading>
       <br />
       <CustomContainer>
+        <ReviewsSection/>
         <ReviewForm
           setReviews={setReviews}
           setLocalStorage={setLocalStorage}

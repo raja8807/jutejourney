@@ -43,12 +43,12 @@ const ReviewsSection = () => {
 
   return (
     <>
-      <SectionHeading
+      {/* <SectionHeading
         center
         caption="Look what our precious customers say about us."
       >
         Customer Reviews
-      </SectionHeading>
+      </SectionHeading> */}
       <CustomContainer className={styles.reviews}>
         <br />
         <Carousel

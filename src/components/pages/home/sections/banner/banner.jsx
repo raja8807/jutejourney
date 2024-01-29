@@ -40,21 +40,21 @@ const Banner = () => {
       >
         <Carousel.Item className={styles.holder}>
           <OverLay isSliding={isSliding}>Empowerment in Every Weave</OverLay>
-          <Image src="/images/banner/1.jpg" alt="xx" fluid />
+          <Image src="/images/banner/bnr (1).jpg" alt="xx" fluid />
         </Carousel.Item>
         <Carousel.Item className={styles.holder}>
-          <Image src="/images/banner/2.jpg" alt="xx" fluid />
+          <Image src="/images/banner/bnr (2).jpg" alt="xx" fluid />
           <OverLay isSliding={isSliding}>
             Excellent service with no hidden costs
           </OverLay>
         </Carousel.Item>
         <Carousel.Item className={styles.holder}>
           <OverLay isSliding={isSliding}>Custom made bags for you</OverLay>
-          <Image src="/images/banner/1.jpg" alt="xx" fluid />
+          <Image src="/images/banner/bnr (3).jpg" alt="xx" fluid />
         </Carousel.Item>
         <Carousel.Item className={styles.holder}>
           <OverLay isSliding={isSliding}>Innavation and Eco Friendly</OverLay>
-          <Image src="/images/banner/2.jpg" alt="xx" fluid />
+          <Image src="/images/banner/bnr (4).jpg" alt="xx" fluid />
         </Carousel.Item>
       </Carousel>
       <br />
