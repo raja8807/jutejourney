@@ -4,8 +4,9 @@ const contactDetails = {
   twitter: "#",
   linkedIn: "#",
   youtube: "#",
-  mobile: "7483377777",
-  whatsapp: "9042936647",
+  // mobile: "7483377777",
+  mobile: "86678 45075",
+  whatsapp: "90429 36647",
   email: "sales@jutejourney.com",
 
   addresses: [
